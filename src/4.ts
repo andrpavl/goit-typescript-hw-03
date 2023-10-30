@@ -1,3 +1,11 @@
+interface IHasKey {
+	getKey(): Key;
+}
+
+interface IDoor {
+	openDoor(key: Key): void;
+}
+
 class Key {
 	private signature: number;
 
@@ -9,7 +17,7 @@ class Key {
 	}
 }
 
-class Person {
+class Person implements IHasKey {
 	private key: Key;
 
 	constructor(key: Key) {
@@ -21,7 +29,7 @@ class Person {
 	}
 }
 
-abstract class House {
+abstract class House implements IDoor{
 	protected door: boolean = false;
 	protected key: Key;
 	protected tenants: Person[] = [];
