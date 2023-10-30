@@ -29,7 +29,7 @@ class Person implements IHasKey {
 	}
 }
 
-abstract class House implements IDoor{
+abstract class House implements IDoor {
 	protected door: boolean = false;
 	protected key: Key;
 	protected tenants: Person[] = [];
